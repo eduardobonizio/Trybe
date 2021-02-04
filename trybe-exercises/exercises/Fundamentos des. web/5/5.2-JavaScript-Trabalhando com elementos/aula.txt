@@ -1,0 +1,29 @@
+//Acessa o elemento pai do elemento entr ''
+document.querySelector('').parentNode
+
+//Pode-se utilizar multiplos parentNode para ir subindo a arvore do DOM
+document.querySelector('').parentNode.parentNode
+
+Outras propriedades:
+parentNode: retorna o elemento pai.
+childNodes: retorna um array com todos os elementos filhos
+firstChild: retorna o primeiro filho
+lastChild: retorna o último filho
+nextSibling: retorna o próximo nó.
+previousSibling: retorna o nó anterior.
+nextElementSibling: retorna o próximo elemento.
+previousElementSibling: retorna o elemento anterior.
+
+//Exemplo de como criar um elemento html
+let ingredientList = document.querySelector('.listaDeItemsNoHTML')
+let listItem = document.createElement('li');
+listItem.innerHTML = 'Sal';
+listItem.className = 'sal';
+ingredientList.appendChild(listItem);
+
+//Procura pela palavra no elemento (o elemento pode ter uma frase)
+element.innerHTML.includes('palavra');
+
+//Remove um elemento
+let todosAsCarnes = document.querySelectorAll('.carnes')
+todosAsCarnes.removeChild(todosAsCarnes[1])

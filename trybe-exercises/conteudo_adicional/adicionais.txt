@@ -1,0 +1,19 @@
+#Marcar com X o conteúdo visualizado
+git:
+[]Merge vs Rebase: https://www.atlassian.com/git/tutorials/merging-vs-rebasing
+[]Usando git direito: https://www.youtube.com/watch?v=6OokP-NE49k
+[]Entendendo git: https://www.youtube.com/watch?v=6Czd1Yetaac
+
+Linkedin:
+[]Configurando o perfil: https://www.youtube.com/watch?v=FHzbInWAWMg&feature=youtu.be
+
+
+CSS:
+[]css-tricks.com
+
+Leituras:
+O que é crude
+Testes automatizados
+Feature Toggles
+React
+Redux

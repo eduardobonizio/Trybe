@@ -1,0 +1,96 @@
+tag <form> cria formulário
+propriedades:
+    action - Para onde os dados serão enviados
+    metod - Metodo que será usado para enviar os dados. o GET é enviado através da URL e o POST envia de maneira mais "escondida" (ainda não explicado)
+
+input - Usado dentro do form para definir o campo onde o usuário irá inserir as informações
+propriedades:
+    type - Tipo de dado que será inserido (exemplo: text)
+    name - Nome desse input, é ele que vai na URL 
+    placeholder - Aparece um texto no fundo do input, pode-se colocar o texto que indica o que deve ser feito placeholder="texto"
+    required - Faz com que seja obrigatório o preenchimento desse input (não tem =" ")
+    value - value="texto" fará com que o input já esteja preenchido
+
+input type checkbox - usado para multiplas escolhas
+    id="" - para identificar cada checkbox
+    type="checkbox" - Cria uma caixa para marcar
+    value="" - o valor que ele vai passar quando for marcado
+    name="" - o nome que será passado na URL, se houver vários checkbox do mesmo grupo (mesmo contexto) eles tem que ter o mesmo name
+    checked - já inicia marcado
+    A descrição fica depois da tag input: <input id='' type='' value='' name='' checked> Descrição
+    ex.:
+        <form action="" method="GET">
+            <input type='checkbox' id='esport-1' value='fut' name='esportes'>Futebol
+            <input type='checkbox' id='esport-2' value='vol' name='esportes'>Volei
+            <input type='checkbox' id='esport-3' value='nat' name='esportes'>Natação
+            <input type='checkbox' id='esport-4' value='atle' name='esportes'>Atletismo
+        </form>
+
+input type radio - usado para escolher apenas uma opção
+    id="" - para identificar cada checkbox
+    name="" - o nome que será passado na URL, se houver vários checkbox do mesmo grupo (mesmo contexto) eles tem que ter o mesmo name, dessa maneira apenas um será selecionado
+    value="" - o valor que ele vai passar quando for marcado
+    A descrição fica depois da tag input: <input id='' type='' value='' name='' checked> Descrição
+    ex.:
+        <form action="" method="GET">
+            <label for="cidade-1">
+                <input type='radio' id='cidade-1' value='sp' name='cidade'>São Paulo
+            </label>
+            <label for="cidade-2">
+                <input type='radio' id='cidade-2' value='df' name='cidade'>Distrito Federal
+            </label>
+            <label for="cidade-3">
+                <input type='radio' id='cidade-3' value='mg' name='cidade'>Minas Gerais
+            </label>
+            <label for="cidade-4">
+                <input type='radio' id='cidade-4' value='go' name='cidade'>Goiania
+            </label>
+        </form>
+
+input type password - Campo de senha
+    Ex.:
+        <form action="" method="GET">
+            <input type='password' name='senha'>
+        </form>
+        
+input type file - Usado para enviar arquivos
+    quando usar o method post tem que adiciona na tag do from: enctype='multipart/form-data' para indicar que pode enviar arquivos
+    Ex.:
+        <form action="" method="GET">
+            <input type='file' name='senha' id=''>
+        </form>
+
+input select - Exibe uma drop down list
+    tag <option> - exibe uma opção da lista
+
+    Ex.:
+        <form action="" method="GET">
+            <select name='estado' id='dropdown-estado'>
+                <option value='sp'>São Paulo</option>
+                <option value='df'>Distrito Federal</option>
+                <option value='mg'>Minas Gerais</option>
+                <option value='go'>Goiania</option>
+            </select>
+        </form>
+
+label - Usado para explicar o que é o input
+propriedades:
+    for="idDoInput" - Colocar o name do input dentro das aspas para indicar quem é o "dono" dessa label
+    Colocar a explicação dentro da tag <label for=""> explicação </label>
+    Usado também para envolver cada input, dessa maneira pode-se clicar na palavra e não somente na checkbox ou no radio
+
+button - Botão para enviar a informação
+    O botão deve inserido após todos os campos de formulário, ao clicar ele enviará todos os dados dos formulários
+    no method="GET" ele vai enviar algo parecido com isso name.valu ou name=value (onde name é o nome do campo)
+propriedades:
+    type - "submit" define o tipo do botão e esse submit indica que será usado para submeter os dados enviados
+    Dentro da tag button dá para colocar o texto que aparecerá no botão <button>Enviar</button>
+
+<textarea> - Cria um campo resizable para inserção de texto
+propriedades:
+    cols - define o tamanho da área (width)
+    rows - define a quantidade de linhas
+    da para colocar um texto dentro da tag
+
+    Input types: https://www.w3schools.com/html/html_form_input_types.asp
+    Input attributes: https://www.w3schools.com/html/html_form_attributes.asp

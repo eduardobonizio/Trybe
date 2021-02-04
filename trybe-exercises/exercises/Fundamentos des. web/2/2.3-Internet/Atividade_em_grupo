@@ -1,0 +1,36 @@
+Nome do grupo:
+Onze Homens e um HTTP
+
+Nomes:
+Cristiano Roberto - Turma 08
+Daniel Rodrigues - Turma 8
+Digo Castro - Turma 8
+Eduardo Bonizio - Turma 8
+Jean Franco - Turma 8
+Jessandro Benicio - Turma 8
+Lucas Neiva - Turma 8
+Pedro Amaral - Turma 08
+Rafael Greco - Turma 8
+Rafael Moura - Turma 08
+Roberto Siebeneicher - Turma 8
+Tandy Almeida - Turma 8
+
+Quando você digita google.com no navegador, o que acontece entre o instante em que você clica em “Enter” (ou “ir/carregar”) e o momento em que a página inicial do Google aparece na tela?
+
+[Cliente -> Servidor]
+Browser pede ao ISP que busque o IP do domínio via DNS
+Realiza consulta ao servidor DNS
+Balanceador de carga
+Faz uma requisição ao Servidor.
+
+[Cliente <- Servidor]
+Processa a requisição do Cliente.
+Busca no database as informações
+Divide o conteúdo processado em pacotes.
+Envia os pacotes pelas rotas de acordo com um algoritmo de rota.
+Utiliza o protocolo TCP/IP para distribuir para o endereço MAC
+	
+[Renderização no browser]
+Recebe os pacotes enviados.
+Renderiza os dados recebidos(HTML, CSS, JS, etc.) no DOM.*
+Exibe os dados consolidados no monitor.

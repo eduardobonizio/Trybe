@@ -1,0 +1,82 @@
+//Retorna o elemento com o ID específicado
+document.getElementById("ID");
+
+//Retorna um array com todos os elementos que tem determinada classe. HTMLCollection
+//Pode-se usar o [] para acessar um elemento desse array document.getElementsByClassName("className")[0].innerText;
+document.getElementsByClassName("className");
+
+//Retorna um array com todos os elementos que tem determinada tag. HTMLCollection
+//Pode-se usar o [] para acessar um elemento desse array document.getElementsByTagName("tagName")[0].innerText;
+document.getElementsByTagName("tagName");
+
+//Retorna o primeiro elemento especificado no (), para especificar um id ou uma classe tem que user o "#ID" ou o ".className". retorna NodeList
+doument.querySelector('div');
+
+//Retorna todos os elementos ('') em um array. retorna NodeList
+doument.querySelectorAll('div');
+
+//Retorna todos os paragrafos da classe vencedores
+doument.querySelectorAll('.vencedores div');
+
+//Mostra o que tem no body
+document.body;
+
+//retorna/altera o valor que estiver dentro da tag <tag> AQUI </tag> inclusive as tags que estiverem dentro dela
+.innerHTML;
+
+//Retorna/altera o texto dentro de uma tag, ignora as tags dentro dela
+.innerText;
+
+//Retorna/altera os estilos aplicados em determinada tag
+.style;
+
+/*
+Pode-se criar elementos pelo javascript
+ex.:
+Dessa maneira somente cria o elemento, mas não posiciona ele
+*/
+let div = document.createElement('div');
+
+//atribui uma .class na <div>
+div.className = 'algumaCoisa';
+
+//atribui um #id na <div>
+div.id = 'algumaCoisa';
+
+consolo.log(div);
+
+//Cria a div dentro do body, no final dele
+documento.body.appendCHild(div);
+
+// Atrubui valor para a div
+div.innerHTML = "Olá pessoal!";
+
+//Adiciona cor ao fundo da div
+div.style.backGroundColor = 'yellow';
+
+//Seleciona todos os elementos div
+let divs = doument.querySelectorAll('div');
+
+//Esse tipo de for é usado para passar em um array
+for (let div of divs){
+	document.body.removeChild('div');
+}
+
+//Seleciona o primeiro li que aparecer e retorna quem é o pai desse nó
+document.querySelector('li').parentNode;
+
+//Retorna todos os filhos do body
+document.body.childNodes
+
+//Tras os filhos de month-container
+document.querySelector('.month-container').childNodes
+
+//Retorna os filhos que forem elementos html (HTML collection)
+document.querySelector('.month-container').childre
+
+//Adciona um elemento no weekDaysList
+let weekDaysList = document.querySelector('.week-days')
+weekDaysList.appendChild(element)
+
+//Cria um elemento
+document.creatItem('li');

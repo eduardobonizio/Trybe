@@ -1,0 +1,112 @@
+/*A Classe <span></span> é boa para agrupar pedaços de textos e pode ser personalizada com uma classe ou id. Ela não adiciona quebra de linha*/
+/*A classe <div></div> é boa para agrupar vários elementos e também pode ser personalizada. Adiciona quebra de linha antes e depois da div*/
+/*Quando for definir altura e largura em imagem, colocar somente uma delas para que o navegador defina a outra, assim não desfigura a imagem*/
+/*display: inline-block; Quando utilizado em uma div que tem outras divs dentro dela, vai alinhar as div que estão dentro da primeira*/
+/*vertical-align: middle; middle,top,botton. Alinha as divs*/
+.div-config{
+    background: rgb(230, 230, 230); /*Adiciona cor de fundo somente dentro da div*/
+    width: 70%; /*Delimita a largura da caixa <->*/
+    height: 180px; /*Delimita a altura da caixa*/
+    /*Caixas com barra de rolagem podem ser incomodas para o usuário*/
+    /*Adiciona barra de rolagem no eixo y e esconde a do x caso o conteúdo da div seja maior que ela mesmo*/
+    overflow-y: auto;
+    overflow-x: hidden;
+    /*Adiciona margem nos quatro cantos da div, começando por cima e indo em sentido horário*/
+    margin: 15px 0px 10px 6px;
+}
+
+/*Configurações para uma imagem dentro de uma div*/
+#cute-cat {
+    width: 120px;
+    /*Define bordas na direita e em baixo*/
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/*Usado para configurar a div que envolve todo o conteúdo do body: <div id="container"></div>*/
+#container {
+    width: 400px; /*Define a largura dessa div*/
+    margin: auto; /*Alinha a div ao centro da página*/
+    border: 1px ridge rgb(145, 0, 0); /*tamanho da borda, tipo da bora, cor da borda*/
+    border-top: 10px solid purple; /*Configura somenta a borda do topo*/
+    padding: 15px; /*adiciona espaçamento nos quatro cantos*/
+    
+}
+
+/*ID adicionado a uma imagem com o intuito de deixar ela no fundo*/
+#landscape {
+    width: 250px;
+    position: absolute; /*Permite colocar um objeto em qualquer lugar da tela, é complementado por top, left, bottom e right*/
+    top: 20px;
+    left: 10px;
+    z-index: 1; /*É como a posição Z em jogo, define a profundidade, permitindo escolher a posição de cada elemento*/
+}
+
+h1 {
+    position: fixed; /*Faz com que o elemento sempre permaneça na tela, mesmo rolando a página*/
+    z-index: 4;
+    left: 30px;
+}
+
+/*Float faz com que um elemento seja envolvido por outros, tipo uma imagem envolvida por um texto no word. Se separar a página em algumas divs e colocar cada div com float os elementos não vao adentrar uns nos outros*/
+#hopper-pic {
+    /*Exemplo de uma imagem*/
+    width: 100px;
+    float: left; /*Faz com que esse elemento seja alinhado a esquerda e ativa o float*/
+    margin-right: 6px;
+    margin-bottom: 6px;
+    
+}
+#hopper-footer {
+    /*Exemplo de um rodapé*/
+    background-color: rgb(232, 232, 232);
+    padding: 6px;
+    clear: both; /*Faz que o rodapé não seja envolvido por nem uma outra div*/
+}
+
+#hopper-links {
+    /*Simula um menu a direita, ou uma barra vertical na direita*/
+    float: right; /*Faz com que esse elemento seja alinhado a direita e ativa o float*/
+    width: 30%; /*Faz com que esse elemento ocupe 30% da tela, fazendo com que sobre apenas 70% para todo o resto da página*/
+    margin-left: 10px; 
+    
+}
+
+/*A classe com "*" aplica a configuração ao site todo*/
+*{
+    /*Vai tirar todas as margens e paddings de todo o site*/
+    /*margin: auto; centraliza o conteúdo*/
+    margin: 0;
+    padding: 0;
+}
+
+/*Adiciona uma imagem como fundo de uma div por exemplo*/
+.header{
+    background-image: "url"; /*Define uma imagem como bg*/
+    background-size: cover; /*Deixa o background do tamanho do monitor*/
+    height: 500px;
+    background-position: 50% 50%; /*Define qual parte do bg vai ser focado, para alterar se vai começar mostrando mais em baixo ou em cima ou dos lados*/
+}
+
+.div-no-header{
+    max-width: 60%; /*Define que esse elemento só pode ocupar 60% da largura da div que ele estive contigo ou da tela se não estiver dentro de outra div*/
+}
+
+/*Conceito de herança, somente os parágrafos do div no header vão receber essas configurações*/
+.div-no-header p{
+    margin-bottom: 30px;
+}
+
+/*Pseudoclasses determinadas por ":"*/
+a:link {
+    /*Muda a cor do link não visitado*/
+    color: red;
+}
+a:visited {
+    /*Muda a cor do link já visitado*/
+    color: orange;
+}
+a:hover, a:active, a:focus { 
+    /*Muda a cor quado passa o mouse em cima, quando clica e quando seleciona (tipo com tab)*/
+    background-color: rgb(255, 0, 255);
+}  

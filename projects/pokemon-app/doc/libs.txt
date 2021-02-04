@@ -1,0 +1,13 @@
+https://material-ui.com/pt/getting-started/usage/
+http://react-toolbox.io/#/install
+https://rsuitejs.com/
+https://enzymejs.github.io/enzyme/docs/api/shallow.html
+
+
+https://validatejs.org/
+https://www.npmjs.com/package/jsonfile
+
+
+https://github.com/axios/axios
+
+https://redux.js.org/

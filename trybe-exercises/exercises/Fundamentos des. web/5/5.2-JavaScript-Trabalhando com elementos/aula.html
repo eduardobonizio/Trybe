@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="paiDoPai">
+        <div id="pai">
+          <div id="primeiroFilho"></div>
+          <div id="elementoOndeVoceEsta">
+            <div id="primeiroFilhoDoFilho"></div>
+            <div id="segundoEUltimoFilhoDoFilho"></div>
+          </div>
+          Atenção!
+          <div id="terceiroFilho"></div>
+          <div id="quartoEUltimoFilho"></div>
+        </div>
+      </div>
+      <script>
+          let ondeVcEsta = document.querySelector("#elementoOndeVoceEsta");
+          let newElement = document.createElement('p')
+          newElement.innerHTML = 'Irmão de elementoOndeVoceEsta';
+          ondeVcEsta.parentNode.appendChild(newElement);
+
+          let newElement2 = document.createElement('p')
+          newElement2.innerHTML = 'Filho de elementoOndeVoceEsta';
+          ondeVcEsta.appendChild(newElement2);
+
+          let newElement3 = document.createElement('p')
+          newElement3.id = 'filhoDePrimeiroFilhoDoFilho'
+          newElement3.innerHTML = 'Filho de primeiroFilhoDoFilho';
+          ondeVcEsta.firstElementChild.appendChild(newElement3);
+
+          console.log(document.querySelector("#filhoDePrimeiroFilhoDoFilho").parentNode.parentNode.parentNode);
+
+
+          /*
+          console.log(document.querySelector('#elementoOndeVoceEsta').parentNode);
+          document.querySelector('#elementoOndeVoceEsta').parentNode.style.backgroundColor = "gray";
+          document.querySelector('#primeiroFilhoDoFilho').innerHTML = 'Novo texto';
+          console.log(document.querySelector('#pai').firstElementChild);
+          console.log(document.querySelector('#elementoOndeVoceEsta').firstElementChild);
+          console.log(document.querySelector('#elementoOndeVoceEsta').nextSibling);
+          console.log(document.querySelector('#elementoOndeVoceEsta').nextElementSibling);
+          console.log(document.querySelector('#pai').lastChild.previousSibling.previousSibling.previousSibling);
+          */
+      </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="" id="main-form">
+
+    <fieldset class="peronal-info">
+      <label for="name">Nome
+        <input type="text" name="name" required>
+      </label>
+      <label for="email">Email
+        <input type="text" name="email" required>
+      </label>
+      <label for="cpf">CPF
+        <input type="text" name="cpf" required>
+      </label>
+      <label for="adress">Endereço
+        <input type="text" name="adress" required>
+      </label>
+      <label for="city">Cidade
+        <input type="text" name="city" required>
+      </label>
+      <label for="state">Estado
+        <select name="state" id="state" required></select>
+      </label>
+      <label for="type">Tipo:
+        <label for="house">
+          <input type="radio" name="type" id="house" value="" required>Casa
+        </label>
+        <label for="apt">
+          <input type="radio" name="type" id="apt" value="">Apartamento
+        </label>
+      </label>
+    </fieldset>
+
+    <fieldset class="last-job">
+      <label for="summary">Resumo do currículo
+        <textarea name="summary" id="summary" cols="30" rows="10" maxlength="1000" required></textarea>
+      </label>
+      <label for="office">Cargo
+        <input type="text" name="office" maxlength="40" required>
+      </label>
+      <label for="description">Descrição
+        <input type="text" name="description" maxlength="40" required>
+      </label>
+      <label for="start">Data de início
+        <input type="date" name="start" id="start" required>
+      </label>
+    </fieldset>
+    <button type="submit" id="submit">Enviar</button>
+    <button id="clean">Limpar</button>
+  </form>
+  <script src="./script.js"></script>
+</body>
+
+</html>

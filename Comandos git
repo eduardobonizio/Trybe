@@ -1,0 +1,10 @@
+Comandos git
+
+Clona apenas uma branch:
+git clone -b mybranch --single-branch git://sub.domain.com/repo.git
+
+Mostra os commits:
+git log
+
+Força voltar a um commit
+git restore --hard HEAD ##Pegar o código da HEAD no git log

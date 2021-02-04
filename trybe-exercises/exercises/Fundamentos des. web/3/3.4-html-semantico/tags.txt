@@ -1,0 +1,10 @@
+O html semantico não diz respeito a estrutura da página em si, o css é quem faz isso, ele serve mais para facilitar a leitura do código, tanto por pessoas quanto por máquinas.
+<header> - Cabeçalho, não precisa ser usado somente no topo da página, pode ser também usado no topo de um artigo, por exemplo.
+<nav> - Principais links de navegação
+<main> - Parte principal do corpo, onde estará o conteúdo da página
+<section> - uma seção dentro daquele local que a a section está contida
+<article> - é um conteúdo auto contido
+<aside> - barra ao lado
+<footer> - para o rodapé
+
+htmlreference.io  --Tags existentes no html

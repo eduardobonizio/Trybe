@@ -1,0 +1,75 @@
+CSS Básico
+site http://www.csszengarden.com/ para demonstação de estilização com CSS
+Adicionar o arquivo .css para todas as páginas:
+
+Dentro da tag head adicionar: <link rel="stylesheet" type="text/css" href="style.css">
+
+Dentro da head criar uma tag <style> </style>, dentro dessa tag pode-se configurar as propriedades de outras tags.
+Ex.:
+<style>
+    //Muda a cor de todas as tags h2 para verde.
+    h2 {
+        color: green; 
+
+        //2em quer dizer que ele vai multiplicar por 2 o tamanho da fonte do body
+        font-size: 2em;
+    }
+
+    //Muda a cor de fundo da página.
+    body {
+        //Os números são o valor do red, green e blue. Pode-se usar o nome da cor.
+        background-color: rgb(255, 400, 200); 
+        
+        //Altera o tamanho da fonte de tudo que estiver no body.
+        font-size: 20px;
+    }
+
+    //Altera a cor de fundo o parágrafo com o id "change-bg". Tem que usar o # antes do id.
+    #change-bg {
+        background-color: red;
+    }
+
+    //Altera as configurações da classe "list-style". Tem que usar o "." antes do nome da classe.
+    .list-style {
+        background-color: blue;
+        color: white; //Altera a cor da fonte.
+        font-weight: bold; //Deixa as listas em negrito
+        font-style: italic;
+        line-height: 40px; //Adiciona espaçamento entre linhas.
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    //Altera a fonte de todas as fontes dentro dos parágrafos.
+    p {
+        //Dá para usar a tag <link> na tag <body> para referênciar uma fonte, podendo assim garantir que o usuário veja a fonte que quero
+        //https://fonts.google.com/ 
+        font-family: fantasy, sans-serif; //O navegador vai tentar usar a primeira font, se o usuário não tiver ela instalada o navegador vai tentar usar a próxima
+    }
+
+    .borda-redonda{
+        border-radius: 10%;
+    }
+</style>
+
+Pode-se adicionar estilos para uma tag específica adicionando um id único a essa tag e referenciando ela no style.
+Ex.: <p id="change-bg"></p>
+
+Também pode-se criar um estilo para ser aplicado em mais de um local no código utilizando o class.
+Ex.:
+<ul class="list-style">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+
+<ul class="list-style">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+
+Arredondar imagem:
+Ex.: <img class="borda-redonda" src="...">

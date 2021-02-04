@@ -1,0 +1,24 @@
+
+Aula 2.1
+git init #Inicial o git na pasta
+git add nomeDoArquivo #Adiciona o arquivo ao proximo commit, se usar "add ." vai adicionar todos os arquivos ao próximo commit, pode-se adicionar varios na mesma linha. Ex.: Add a1 a2 a3
+git commit -m "mensagem" #Adiciona commit a todos os arquivos que foram adicionados com git add, o -m serve para indicar que a mensagem já será passada na mesma linha
+git push origin master #Envia as alterações realizadas para no branch master
+
+Aula 2.2
+git pull origin #Atualiza os arquivos locais de acordo com as mudanças que estão no repositório
+git pull origin master #Recebe os arquivos do branch master (atualiza)
+git push origin #Envia os arquivos para o github e atualiza lá
+git push -u origin nomeDaNovaBrunch #Leva a branch para o servidor remoto
+git push origin --delete remoteBranchName #delete branch remotely
+git branch #Mostra as branchs locais, opção -r mostra as branchs remotas
+git branch -d localBranchName #delete branch locally
+git clone urlDoSeuRepositórioTrybeExercises #Clona o repositório da url
+git status #Mostra se tem algo pendente
+git rm nomeDoArquivo #Apaga o arquivo do git, tem que dar commit antes de dar push
+git log #Mostra os commits
+git log --diff-filter=D --summary #Filtra no git por arquivos deletados, summary apresenta os dados em modo sumário
+git checkout HASH~1 nomeDoArquivo #Comando para restaurar arquivos. O "HASH" é a hash do commit onde o arquivo foi deletado (pode-se usar os 4 primeiros digitos da hash), o "1" faz com que o commit volte a ser valido, ele "desdeleta" o commit
+git remote -v #Mostra todos os remotes conectados
+git fetch origin #traz do repositório remoto todas informações sobre ele que ainda não estão no seu repositório local. Um detalhe muito importante: o comando git fetch NÃO incorpora essas mudanças, ou seja não realiza um merge.
+.gitignore #É um arquivo que tem que ser criado na pasta, ele é um arquivo de configuração e o "." serve ocultar o arquivo. Editar esse arquivo com o cat > e adicionar nele o que deve ser ignorad pelo git. Ex.: *.txt (vai ignorar todos os arquivos.txt), teste.txt (vai ignorar somente esse arquivo), nomeDoDiretorio/ (ignorma o diretorio inteiro)
