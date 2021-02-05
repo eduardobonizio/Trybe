@@ -18,10 +18,10 @@ class App extends React.Component {
       width: window.innerWidth,
     };
 
+    this.handleState = this.handleState.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleClickCategory = this.handleClickCategory.bind(this);
-    this.fetchProducts = this.fetchProducts.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.updateAvaliations = this.updateAvaliations.bind(this);
     this.changeCarQuantityProduct = this.changeCarQuantityProduct.bind(this);
@@ -31,7 +31,7 @@ class App extends React.Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.updateDimensions);
-    this.fetchProducts();
+    api.fetchProducts();
     this.updateCartItemsQuantity();
   }
 
@@ -39,16 +39,20 @@ class App extends React.Component {
     window.removeEventListener('resize', this.updateDimensions);
   }
 
+  handleState(nome, valor, callback = undefined) {
+    return callback
+      ? this.setState({ [nome]: valor })
+      : this.setState({ [nome]: valor }, callback);
+  }
+
   handleChange(e) {
     const { name, value } = e.target;
-    this.setState({
-      [name]: value,
-    });
+    this.handleState(name, value);
   }
 
   handleClick(e) {
     e.preventDefault();
-    this.fetchProducts();
+    api.fetchProducts();
   }
 
   async handleClickCategory(e) {
@@ -58,12 +62,12 @@ class App extends React.Component {
         category: e.target.id,
         query: '',
       });
-      this.fetchProducts();
+      api.fetchProducts();
     } else {
       await this.setState({
         category: e.target.id,
       });
-      this.fetchProducts();
+      api.fetchProducts();
     }
   }
 
@@ -71,21 +75,29 @@ class App extends React.Component {
     this.setState({ width: window.innerWidth });
   }
 
-  async fetchProducts() {
-    try {
-      const { category, query } = this.state;
-      const produtos = await api.getProductsFromCategoryAndQuery(category, query)
-        .then((data) => data.results);
-      const produtoComThumbBoa = produtos.map((product) => {
-        product.thumbnail = product.thumbnail.replace('-I.jpg', '-O.jpg');
-        return product;
-      });
-      this.setState({
-        listOfProducts: produtoComThumbBoa,
-      });
-    } catch (error) {
-      return undefined;
-    }
+  // async fetchProducts() {
+  //   try {
+  //     const { category, query } = this.state;
+  //     const produtos = await api.getProductsFromCategoryAndQuery(category, query)
+  //       .then((data) => data.results);
+  //     const produtoComThumbBoa = produtos.map((product) => {
+  //       product.thumbnail = product.thumbnail.replace('-I.jpg', '-O.jpg');
+  //       return product;
+  //     });
+  //     this.setState({
+  //       listOfProducts: produtoComThumbBoa,
+  //     });
+  //   } catch (error) {
+  //     return undefined;
+  //   }
+  // }
+
+  async alteraStateListOfProducts() {
+    const { category, query } = this.state;
+    const data = await api.fetchProducts(category, query);
+    this.setState({
+      listOfProducts: data,
+    });
   }
 
   updateCartItemsQuantity() {
@@ -178,7 +190,7 @@ class App extends React.Component {
         <main className="main">
           <Content
             { ...this.state }
-            fetchProducts={ this.fetchProducts }
+            fetchProducts={ api.fetchProducts }
             addToCart={ this.addToCart }
             changeCarQuantityProduct={ this.changeCarQuantityProduct }
             handleClickCategory={ this.handleClickCategory }

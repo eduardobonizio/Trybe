@@ -16,3 +16,22 @@ export async function getProduct(id) {
   ).then((data) => data.json());
   return endPoint;
 }
+
+export async function fazMap(obj) {
+  const newObj = await obj.map((product) => {
+    product.thumbnail = product.thumbnail.replace('-I.jpg', '-O.jpg');
+    return product;
+  });
+  return newObj;
+}
+
+export async function fetchProducts(category, query) {
+  try {
+    const produtos = await getProductsFromCategoryAndQuery(category, query)
+      .then((data) => data.results);
+    const result = await fazMap(produtos);
+    return result;
+  } catch (error) {
+    return undefined;
+  }
+}
