@@ -1,0 +1,10 @@
+SELECT
+FROM
+WHERE
+ORDER BY
+AND
+OR
+IN
+	Seleciona os usuários com ids 1, 2 ou 3 dentro da coluna "id":
+	SELECT id FROM sakila.users WHERE id IN (1, 2, 3)
+LIKE
