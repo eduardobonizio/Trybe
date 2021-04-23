@@ -1,10 +1,63 @@
 SELECT
+
 FROM
+
 WHERE
+	SELECT id FROM sakila.users WHERE id = 1;
+
 ORDER BY
+	SELECT id, name FROM sakila.users ORDER BY name DESC;
+
 AND
+
+NOT
+	SELECT name FROM sakila.users WHERE name NOT IN ('PEC', 'EDU');
+
 OR
+
 IN
 	Seleciona os usuários com ids 1, 2 ou 3 dentro da coluna "id":
-	SELECT id FROM sakila.users WHERE id IN (1, 2, 3)
+	SELECT id FROM sakila.users WHERE id IN (1, 2, 3);
+
+BETWEEN
+	SELECT name FROM sakila.users WHERE name BETWEEN 'Edu' AND 'Lucas' ORDER BY name;
+
 LIKE
+	Utilizado em filtros onde se tem apenas dados parciais (é como um "contem isso")
+	SELECT * FROM sakila.uses WHERE name LIKE '%FER%'
+	%parte_da_palavra% -> Contem esse texto.
+	%final_da_palavra -> Termina com esse texto.
+	inicio_da_palavra% -> Começa com esse texto.
+	J%E -> Começa com J e termina com E.
+	_duardo -> A primeira letra pode ser qualquer coisa e o resto tem que ser "duardo".
+	_du% -> Primeira letra pode ser qualquer coisa, a segunda a terceira tem que ser "du" e o final qualquer coisa/quantidade.
+	__uardo -> Pode-se usar quantos "_" forem necessários.
+
+CAST()
+	The CAST() function converts a value (of any type) into the specified datatype.
+	SELECT * FROM sakila.rental where rental_date BETWEEN
+		CAST('2005-05-26 00:00:00' AS datetime) AND CAST('2005-05-27 23:59:59' AS datetime);
+
+now()
+	Retorna data e tempo de agora
+	SELECT now();
+
+curdate()
+	Retorna a data de hoje
+	SELECT CURDATE();
+	
+curtime()
+	Retorna a hora corrente
+	SELECT curtime();
+	
+year(now())
+	Retorna somente o ano
+	SELECT year(now());
+
+month(now())
+	Retorna somente o mês
+	SELECT month(now());
+	
+day(now())
+	Retorna apenas o dia de hoje
+	SELECT day(now());
