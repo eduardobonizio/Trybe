@@ -9,7 +9,7 @@ O MongoDb possui diversas ferramentas, como, por exemplo, mongo , mongosh , Comp
 
 ***Exercício 1***: Inspecione um documento para que você se familiarize com eles. Entenda os campos e os níveis existentes no documento escolhido.
 ```javascript
-db.superheroes.find().limit(1);
+db.superheroes.findOne();
 ```
 
 ***Exercício 2***: Selecione todos os super-heróis com menos de 1.80m de altura. Lembre-se de que essa informação está gravada em centímetros.
@@ -29,7 +29,7 @@ db.superheroes.count( { "aspects.height": {$lte: 180} } );
 
 ***Exercício 5***: Selecione um super-herói com 2.00m ou mais de altura.
 ```javascript
-db.superheroes.find( { "aspects.height": {$gte: 200} } ).limit(1);
+db.superheroes.findOne( { "aspects.height": {$gte: 200} } );
 ```
 
 ***Exercício 6***: Retorne o total de super-heróis com 2.00m ou mais.
