@@ -103,7 +103,14 @@ db.movies.update(
 ```
 ***Exercício 8*** : Utilize o operador $min para alterar o budget para 5 do filme Home Alone .
 ```javascript
-
+db.movies.update(
+  { title: "Home Alone" },
+  {
+    $min: {
+      budget: 5,
+    }
+  }
+);
 ```
 ***Exercício 9*** : Utilize o operador $max para alterar o imdbRating para 8.6 do filme Godzilla . Além disso, altere a categoria "adventure" para "thriller" do filme Godzilla .
 ```javascript
