@@ -92,7 +92,14 @@ db.movies.update(
 ```
 ***Exercício 7*** : Renomeie o campo budget para estimatedBudget do filme Batman .
 ```javascript
-
+db.movies.update(
+  { title: "Batman" },
+  {
+    $rename: {
+      budget: "estimatedBudget",
+    }
+  }
+);
 ```
 ***Exercício 8*** : Utilize o operador $min para alterar o budget para 5 do filme Home Alone .
 ```javascript
