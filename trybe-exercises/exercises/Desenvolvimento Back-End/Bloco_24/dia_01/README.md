@@ -27,18 +27,35 @@ O MongoDb possui diversas ferramentas, como, por exemplo, mongo , mongo sh , Com
 ```javascript
 db.movies.update(
   { title: "Batman" },
-  { $set: {
-    imdbRating: 7.7
-  }}
+  {
+    $set: {
+      imdbRating: 7.7,
+    }
+  }
 );
 ```
 ***Exercício 2*** : Altere budget para 1 no filme Godzilla .
 ```javascript
-
+db.movies.update(
+  { title: "Godzilla" },
+  { 
+    $set: {
+      budget: 1,
+    }
+  }
+);
 ```
 ***Exercício 3*** : Altere budget para 15 e imdbRating para 5.5 no filme Home Alone .
 ```javascript
-
+db.movies.update(
+  { title: "Home Alone"},
+  {
+    $set: {
+      budget: 15,
+      imdbRating: 5.5,
+    }
+  }
+);
 ```
 ***Exercício 4*** : Aumente em 2 o imdbRating do filme Batman .
 ```javascript
