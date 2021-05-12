@@ -59,7 +59,14 @@ db.movies.update(
 ```
 ***Exercício 4*** : Aumente em 2 o imdbRating do filme Batman .
 ```javascript
-
+db.movies.update(
+  { title: "Batman" },
+  {
+    $inc: {
+      imdbRating: 2,
+    }
+  }
+);
 ```
 ***Exercício 5*** : Aumente em 5 o budget do filme Home Alone .
 ```javascript
