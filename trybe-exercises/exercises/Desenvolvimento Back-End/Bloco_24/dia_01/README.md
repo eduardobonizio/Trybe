@@ -72,7 +72,7 @@ db.movies.update(
 ```javascript
 db.movies.update(
   { title: "Home Alone" },
-  { 
+  {
     $inc: {
       budget: 5,
     }
@@ -81,7 +81,14 @@ db.movies.update(
 ```
 ***Exercício 6*** : Multiplique por 4 o imdbRating do filme Batman .
 ```javascript
-
+db.movies.update(
+  { title: "Batman" },
+  {
+    $mul: {
+      imdbRating: 4,
+    }
+  }
+);
 ```
 ***Exercício 7*** : Renomeie o campo budget para estimatedBudget do filme Batman .
 ```javascript
