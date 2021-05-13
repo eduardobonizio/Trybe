@@ -95,7 +95,7 @@ db.movies.updateMany(
 db.movies.updateOne(
   { title: "Home Alone" },
   {
-    $push: {
+    $addToSet: {
       cast: {
         $each: [
           {
