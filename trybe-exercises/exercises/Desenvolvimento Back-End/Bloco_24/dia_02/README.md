@@ -132,15 +132,26 @@ db.movies.updateOne(
 
 ***Exercício 10***: Crie um array de documentos chamado cast para o filme Batman com os seguintes dados:
 ```javascript
-{
-  "character": "Batman"
-},
-{
-  "character": "Alfred"
-},
-{
-  "character": "Coringa"
-}
+db.movies.updateOne(
+  { title: "Batman" },
+  {
+    $addToSet: {
+      cast: {
+        $each: [
+          {
+            "character": "Batman"
+          },
+          {
+            "character": "Alfred"
+          },
+          {
+            "character": "Coringa"
+          }
+        ]
+      }
+    }
+  }
+);
 ```
 
 
