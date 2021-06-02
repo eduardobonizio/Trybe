@@ -1,6 +1,6 @@
 const readline = require('readline-sync');
 
-const showIMC = () => {
+const mostraImc = () => {
   const peso = readline.questionFloat('Qual o seu peso? ');
 
   const altura = readline.questionFloat('Qual a sua altura? ');
@@ -23,4 +23,4 @@ const situacao = (imc) => {
   if(imc >= 35 && imc < 40) return "Obesidade grau II";
 }
 
-showIMC();
+mostraImc();
