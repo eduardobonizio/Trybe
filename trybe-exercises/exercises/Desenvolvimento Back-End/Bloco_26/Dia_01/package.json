@@ -1,0 +1,13 @@
+{
+  "name": "Dia_01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "calculaIMC.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "imc": "node imc.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
