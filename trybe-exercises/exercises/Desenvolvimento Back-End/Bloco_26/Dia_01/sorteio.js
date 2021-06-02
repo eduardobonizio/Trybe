@@ -14,10 +14,10 @@ const sorteia = () => {
   const jogarMaisUmaVez = readline.question("Deseja tentar outra vez? Y/N ");
 
   if(jogarMaisUmaVez.toLowerCase() === 'y') return sorteia();
-
-  return;
 };
 
 const numeroAleatorio = () => Math.floor(Math.random() * 11);
 
-sorteia();
+module.exports = {
+  sorteia
+};

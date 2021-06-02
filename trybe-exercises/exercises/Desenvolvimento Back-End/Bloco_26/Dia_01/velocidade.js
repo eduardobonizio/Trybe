@@ -11,4 +11,6 @@ const mostraVelocidadeMedia = () => {
 
 const calculaVelocidadeMedia = (distancia, tempo) => distancia / tempo;
 
-mostraVelocidadeMedia();
+module.exports = {
+  mostraVelocidadeMedia
+};

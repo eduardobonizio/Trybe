@@ -23,4 +23,6 @@ const situacao = (imc) => {
   if(imc >= 35 && imc < 40) return "Obesidade grau II";
 }
 
-mostraImc();
+module.exports = {
+  mostraImc
+};
