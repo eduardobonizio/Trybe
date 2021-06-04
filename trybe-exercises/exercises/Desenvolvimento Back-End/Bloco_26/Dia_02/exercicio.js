@@ -10,6 +10,8 @@ function returnPromise(firstNumber, secondNumber, thirdNumber){
 }
 
 
-returnPromise(1,2,3)
+const generateRandomNumber = () => Math.floor(Math.random() * 100 + 1);
+
+returnPromise(generateRandomNumber(), generateRandomNumber(), generateRandomNumber())
   .then((result) => console.log(result))
   .catch(err => console.log(err.message))
