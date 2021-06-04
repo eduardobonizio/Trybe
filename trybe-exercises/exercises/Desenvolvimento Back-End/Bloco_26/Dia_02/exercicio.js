@@ -13,5 +13,17 @@ function returnPromise(firstNumber, secondNumber, thirdNumber){
 const generateRandomNumber = () => Math.floor(Math.random() * 100 + 1);
 
 returnPromise(generateRandomNumber(), generateRandomNumber(), generateRandomNumber())
-  .then((result) => console.log(result))
-  .catch(err => console.log(err.message))
+  .then((result) => console.log(`.then result: ${result}`))
+  .catch(err => console.log(`Error in .then: ${err.message}`))
+
+
+const asyncPromisse = async () => {
+  try{
+    const result = await returnPromise(generateRandomNumber(), generateRandomNumber(), generateRandomNumber())
+    console.log(`Async / await result: ${result}`)
+  }catch(err){
+    console.log(`Async / await error: ${err.message}`)
+  }
+}
+
+asyncPromisse()
