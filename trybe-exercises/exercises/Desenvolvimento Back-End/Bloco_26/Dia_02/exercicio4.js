@@ -60,12 +60,17 @@ async function copyCharacterToFile(originalFilePath, toFilePath, name){
   }
 }
 
-showIdAndName();
+// showIdAndName();
 
-findCharacterWithID(100);
+// findCharacterWithID(100);
 
-removeWithIds(100, 600)
+// removeWithIds(100, 600)
 
-copyCharactersToNewFile('./simpsons.json', './simpsonFamily.json', 1, 2, 3, 4)
+// copyCharactersToNewFile('./simpsons.json', './simpsonFamily.json', 1, 2, 3, 4)
 
-copyCharacterToFile('./simpsons.json', './simpsonFamily.json', 'Nelson Muntz')
+// copyCharacterToFile('./simpsons.json', './simpsonFamily.json', 'Nelson Muntz')
+
+module.exports = {
+  readContent,
+  writeFile
+}
