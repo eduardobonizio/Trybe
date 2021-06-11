@@ -44,6 +44,14 @@ describe('Tests para a função writeFile()', () => {
     error: 'write error',
     done: 'ok'
   }
+
+  before(()=> {
+    sinon.stub(fs, 'writeFile');
+  })
+
+  after(()=> {
+    fs.writeFile.restore();
+  })
   
   describe('Tests para a resposta', () => {
     it('A resposta é uma string', () => {
