@@ -1,0 +1,20 @@
+{
+  "name": "dia_03",
+  "version": "1.0.0",
+  "description": "***Exercício 1*** : Estruture os testes utilizando mocha e chai para um função que irá dizer se um número é \"positivo\", \"negativo\" ou \"neutro\":\r   Essa função irá receber um número como parâmetro e retornar uma string como resposta;\r   Quando o número passado for maior que 0 deverá retornar \"positivo\", quando for menor que 0 deverá retornar \"negativo\" e quando igual a 0 deverá retornar \"neutro\";\r   Descreva todos os cenário de teste utilizando describes ;\r   Descreva todos os testes que serão feitos utilizando its ;\r   Crie as asserções validando se os retornos de cada cenário tem o tipo e o valor esperado.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.0.0",
+    "sinon": "^11.1.1"
+  }
+}
