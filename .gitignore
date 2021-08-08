@@ -8,7 +8,7 @@
 /react-kickstarter/.git
 
 # dependencies
-/*/node_modules
+node_modules/
 /.pnp
 .pnp.js
 
