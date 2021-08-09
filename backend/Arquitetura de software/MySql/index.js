@@ -12,10 +12,16 @@ app.get('/authors', async (_req, res) => {
   res.status(200).json(authors);
 });
 
-app.get('/books', async (_req, res) => {
+app.get('/books', async (req, res) => {
+  const authorId = req.query.author_id;
+  if(authorId){
+    const bookList = await Books.getByAuthorId(authorId);
+
+    return res.status(200).json(bookList);
+  }
   const bookList = await Books.getAll();
 
-  res.status(200).json(bookList);
+  return res.status(200).json(bookList);
 });
 
 app.listen(PORT, () => console.log(`Ouvindo a porta ${PORT}`))
