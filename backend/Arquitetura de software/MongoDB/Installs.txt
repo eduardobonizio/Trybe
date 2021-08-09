@@ -4,3 +4,4 @@ npm i express body-parser
 npm i nodemon -d
 npm i express-rescue
 npm i joi
+npm install dotenv

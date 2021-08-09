@@ -1,0 +1,8 @@
+#Express port
+PORT=
+
+#MongoDB URL
+DB_URL=
+
+#MongoDB database name
+DB_NAME=
