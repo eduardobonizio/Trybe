@@ -1,10 +1,12 @@
-const express = require('express')
-const app = express()
+const bodyParser = require('body-parser');
+const express = require('express');
+const app = express();
 const PORT = process.env.PORT || 3000;
 
 const Author = require('./models/Author');
 const Books = require('./models/Books');
 
+app.use(bodyParser.json());
 
 app.get('/authors', async (_req, res) => {
   const authors = await Author.getAll();
