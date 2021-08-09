@@ -3,26 +3,18 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const Author = require('./models/Author');
+const Author = require('./controllers/Author');
 const Books = require('./models/Books');
 
+const errorMiddleware = require('./middlewares/error');
+
+
 app.use(bodyParser.json());
+app.use(errorMiddleware);
 
-app.get('/authors', async (_req, res) => {
-  const authors = await Author.getAll();
-
-  res.status(200).json(authors);
-});
-
-app.get('/authors/:id', async (req, res) => {
-  const { id } = req.params;
-
-  const author = await Author.findById(id);
-
-  if (!author) return res.status(404).json({ message: 'Not found' });
-
-  res.status(200).json(author);
-});
+app.get('/authors', Author.getAll);
+app.get('/authors/:id', Author.findById);
+app.post('/authors', Author.create);
 
 app.get('/books', async (req, res) => {
   const authorId = req.query.author_id;
@@ -46,16 +38,5 @@ app.get('/books/:id', async (req, res) => {
   res.status(200).json(book);
 });
 
-app.post('/authors', async (req, res) => {
-  const { first_name, middle_name, last_name } = req.body;
-
-  if (!Author.isValid(first_name, middle_name, last_name)) {
-      return res.status(400).json({ message: 'Dados inválidos' });
-  }
-
-  await Author.create(first_name, middle_name, last_name);
-
-  res.status(201).json({ message: 'Autor criado com sucesso! '});
-});
 
 app.listen(PORT, () => console.log(`Ouvindo a porta ${PORT}`))
