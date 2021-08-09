@@ -11,9 +11,10 @@ npm install dotenv
 npm install -D mocha chai sinon
 
 #em scripts:
+#"test": "mocha ./tests/**/*$NAME*.test.js --exit"
 
 #Para rodar um teste específico
-#"test": "mocha ./tests/**/*$NAME*.test.js --exit"
+#NAME=movieController npm test
 
 #Para rodar todos os arquidos .test.js
 #mocha .<suaPastaDeTestes>/**/*.test.js
