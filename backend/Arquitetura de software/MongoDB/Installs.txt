@@ -5,3 +5,18 @@ npm i nodemon -d
 npm i express-rescue
 npm i joi
 npm install dotenv
+
+#-------------------------
+#Tests
+npm install -D mocha chai sinon
+
+#em scripts:
+
+#Para rodar um teste específico
+#"test": "mocha ./tests/**/*$NAME*.test.js --exit"
+
+#Para rodar todos os arquidos .test.js
+#mocha .<suaPastaDeTestes>/**/*.test.js
+
+#Rodar todos os testes:
+#mocha <suaPastaDeTestes> --recursive
