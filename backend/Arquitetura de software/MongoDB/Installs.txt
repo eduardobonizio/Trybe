@@ -20,3 +20,6 @@ npm install -D mocha chai sinon
 
 #Rodar todos os testes:
 #mocha <suaPastaDeTestes> --recursive
+
+#Criar uma versão especial do BD que queremos em memória, dessa forma, ele não persistira nenhuma informação em disco (sem realizar IO) e ao final de cada teste podemos limpá-lo.
+#npm install -D mongodb-memory-server@6
