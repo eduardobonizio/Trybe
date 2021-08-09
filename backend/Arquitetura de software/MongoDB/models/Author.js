@@ -1,5 +1,7 @@
 const connection = require('./connection');
 
+const { ObjectId } = require('mongodb');
+
 // Cria uma string com o nome completo do autor
 
 const getNewAuthor = (authorData) => {
@@ -29,28 +31,33 @@ const serialize = (authorData) => ({
 // Busca todos os autores do banco.
 
 const getAll = async () => {
-    const [authors] = await connection.execute(
-        'SELECT id, first_name, middle_name, last_name FROM model_example.authors;',
-    );
-    return authors.map(serialize).map(getNewAuthor);
-};
+    return connection()
+        .then((db) => db.collection('authors').find().toArray())
+            .then((authors) =>
+                authors.map(({ _id, firstName, middleName, lastName }) =>
+                getNewAuthor({
+                    id: _id,
+                    firstName,
+                    middleName,
+                    lastName,
+                })
+            )
+        );
+}
 
 const findById = async (id) => {
-    // Repare que substituímos o id por `?` na query.
-    // Depois, ao executá-la, informamos um array com o id para o método `execute`.
-    // O `mysql2` vai realizar, de forma segura, a substituição do `?` pelo id informado.
-    const query = 'SELECT id, first_name, middle_name, last_name FROM model_example.authors WHERE id = ?'
-    const [ authorData ] = await connection.execute(query, [id]);
-    if (authorData.length === 0) return null;
+    if (!ObjectId.isValid(id)) {
+        return null;
+    }
 
-// Utilizamos [0] para buscar a primeira linha, que deve ser a única no array de resultados, pois estamos buscando por ID.
-const { firstName, middleName, lastName } = serialize(authorData[0]);
+    const authorData = await connection()
+        .then((db) => db.collection('authors').findOne(new ObjectId(id)));
 
-return getNewAuthor({
-    id,
-    firstName,
-    middleName,
-    lastName});
+    if (!authorData) return null;
+
+    const { firstName, middleName, lastName } = authorData;
+
+    return getNewAuthor({ id, firstName, middleName, lastName });
 };
 
 const isValid = (firstName, middleName, lastName) => {
@@ -61,10 +68,10 @@ const isValid = (firstName, middleName, lastName) => {
     return true;
 };
 
-const create = async (firstName, middleName, lastName) => connection.execute(
-    'INSERT INTO model_example.authors (first_name, middle_name, last_name) VALUES (?,?,?)',
-    [firstName, middleName, lastName],
-);
+const create = async (firstName, middleName, lastName) =>
+    connection()
+        .then((db) => db.collection('authors').insertOne({ firstName, middleName, lastName }))
+        .then(result => getNewAuthor({ id: result.insertedId, firstName, middleName, lastName }));
 
 module.exports = {
     getAll,
